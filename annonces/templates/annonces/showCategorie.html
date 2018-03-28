@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {{categorie}}
+            
+            {% if annonce_count > 0 %}
+                {% for annonc in annonce  %}
+                    <div class="row">
+                    titre:  {{annonc.titre}}
+                    <div class="row">
+                        <div class="col-lg-4"> {{annonc.prix}}  </div>
+                        <div class="col-lg-4"> {{annonc.contenu}}  </div>
+                    </div>    
+                    </div>
+                {% endfor %}        
+            {% else %}
+                    <h1>Oups Erreur</h1>
+            {% endif %}
+                
+
+        </div>
+    </div>
+{% endblock %}

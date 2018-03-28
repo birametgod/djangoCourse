@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Bienvenue sur mon app , Annonce no {{ annonce.id}} !</h1>
+    <p>{{ annonce.titre }}</p>
+    <p>{{ annonce.auteur }}</p>
+    <p>{{ annonce.contenu }}</p>
+    <p>{{ annonce.categorie.nom }}</p>
+{% endblock body %}

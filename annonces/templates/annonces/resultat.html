@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body%}
+    <div class="container">
+        {% for annonc in annonce %}
+        <div class="row">
+                {{ annonc }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

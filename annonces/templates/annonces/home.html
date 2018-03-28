@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div id="annonces" class="row">
+        <div class="col-lg-3">
+            <h1>Categories</h1>
+                {% for cat in categorie  %}
+                    <li><a href="{% url 'afficher_categorie' catId=cat.id %}"> {{ cat.nom }} </a></li>
+                {% endfor %}    
+        </div>
+        <div class="col-lg-9">
+            <h1>Les annonces</h1>
+            <div><a href="{% url 'addAnnonce' %}">Deposer une annonce</a>  </div>
+            {% for annonc in annonce  %}
+                <div class="row annonce">
+                    <div class="col-lg-6">
+                        <img src="{{annonc.photo.url}}" alt="" class="col-lg-6">
+                    </div>
+                    <div class="col-lg-6">
+                        <li><a href=" {% url 'afficher_annonce' id=annonc.id %} " > {{ annonc.titre }}</a></li>
+                        <div class="row">
+                            <div class="col-lg-3">{{ annonc.categorie }}</div>
+                            <div class="col-lg-3">{{annonc.prix}}</div>
+                            <div class="col-lg-3"> {{ annonc.date }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
